@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Мультимедіа в HTML5</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <video autoplay muted loop id="bg-video">
+    <source src="video/background.mp4" type="video/mp4">
+    Ваш браузер не підтримує відео.
+  </video>
+
+  <div class="content">
+    <h1>Мультимедіа в HTML5</h1>
+
+    <h2>Відео через &lt;video&gt;</h2>
+    <video controls width="400">
+      <source src="video/background.mp4" type="video/mp4">
+      Ваш браузер не підтримує відео.
+    </video>
+
+    <h2>Відео через &lt;iframe&gt; (YouTube)</h2>
+    <iframe width="400" height="225" src="https://www.youtube.com/embed/qCMiJtoyXKI" 
+            title="YouTube video" allowfullscreen></iframe>
+
+    <h2>Аудіо</h2>
+    <audio controls>
+      <source src="audio/sound.mp3" type="audio/mpeg">
+      Ваш браузер не підтримує аудіо.
+    </audio>
+
+    <h2>Google Карта (через iframe)</h2>
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509339!2d144.96305791531556!3d-37.8162797797517!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f6eaf5%3A0x5e2c02e986c2e19e!2sFederation%20Square!5e0!3m2!1sen!2sau!4v1614722258368!5m2!1sen!2sau"
+      width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+<h2>Інтерактивне зображення (map + area)</h2>
+<img src="images/map-image.png" alt="Мапа" usemap="#image-map" width="300">
+<map name="image-map">
+  <area shape="rect" coords="34,44,270,350" href="https://uk.wikipedia.org/" alt="Wiki">
+  <area shape="circle" coords="337,300,44" href="https://google.com" alt="Google">
+</map>
+
+    <h2>Canvas (JavaScript)</h2>
+    <canvas id="myCanvas" width="300" height="200"></canvas>
+
+    <h2>SVG Графіка</h2>
+    <svg width="200" height="100">
+      <rect width="200" height="100" style="fill:blue;stroke:black;stroke-width:3;" />
+    </svg>
+  </div>
+
+  <script>
+    // Canvas: малюємо коло
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(150, 100, 50, 0, 2 * Math.PI);
+    ctx.fillStyle = "lightgreen";
+    ctx.fill();
+    ctx.stroke();
+  </script>
+
+</body>
+</html>
